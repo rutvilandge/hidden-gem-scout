@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit a Gem | Hidden Gem Scout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body class="submit-page">
+  <main class="submit-wrap">
+    <header class="top-nav submit-nav" aria-label="Submit navigation">
+      <div class="brand">
+        <span class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <defs>
+              <linearGradient id="logoGradientSubmit" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#34d399" />
+                <stop offset="100%" stop-color="#fbbf24" />
+              </linearGradient>
+            </defs>
+            <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="url(#logoGradientSubmit)" stroke="#1e293b" stroke-width="1.5" stroke-linejoin="round"></path>
+            <circle cx="12" cy="12" r="2" fill="#fff"></circle>
+          </svg>
+        </span>
+        <span>Hidden Gem Scout</span>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="signin.html?next=explore.html">Explore</a>
+        <a href="map.html">Map Explorer</a>
+      </nav>
+    </header>
+
+    <section class="submit-card">
+      <h1>Submit Your Hidden Gem</h1>
+      <p>Share the spot and we will add it to Explore in the right category.</p>
+      <form class="submit-form" id="submitGemForm">
+        <label for="gemUserName">Your name</label>
+        <input id="gemUserName" type="text" placeholder="Your name" required />
+
+        <label for="gemName">Place name</label>
+        <input id="gemName" type="text" placeholder="e.g., High Spirits Cafe" required />
+
+        <label for="gemImage">Image URL</label>
+        <input id="gemImage" type="url" placeholder="https://..." required />
+
+        <label for="gemSubtitle">Short description</label>
+        <input id="gemSubtitle" type="text" placeholder="One line description" required />
+
+        <label for="gemCategory">Category</label>
+        <select id="gemCategory" required></select>
+
+        <label for="gemLink">Optional link</label>
+        <input id="gemLink" type="url" placeholder="https://maps.google.com/..." />
+
+        <button class="btn btn-primary" type="submit">Submit Gem</button>
+        <p class="submit-status" id="submitStatus" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/explore-data.js"></script>
+  <script src="js/data-service.js"></script>
+  <script src="js/auth-guard.js"></script>
+  <script src="js/submit-gem.js"></script>
+</body>
+</html>

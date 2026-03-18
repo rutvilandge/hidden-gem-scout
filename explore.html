@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore | Hidden Gem Scout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+  <main class="explore-page">
+    <section class="explore-top fade-section is-visible" aria-label="Explore hidden gems">
+      <h1>Explore Hidden Gems</h1>
+      <form class="explore-search" role="search" aria-label="Search hidden gems">
+        <input
+          class="explore-search-input"
+          id="exploreSearchInput"
+          type="search"
+          placeholder="Search hidden gems"
+          autocomplete="off"
+          aria-label="Search categories"
+        />
+        <button class="explore-search-icon" type="submit" aria-label="Search">
+          <svg viewBox="0 0 24 24" role="img">
+            <path d="M10.5 4a6.5 6.5 0 1 0 4.09 11.55l4.43 4.43 1.41-1.41-4.43-4.43A6.5 6.5 0 0 0 10.5 4zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9z"></path>
+          </svg>
+        </button>
+      </form>
+      <div class="explore-search-results" id="exploreSearchResults" hidden></div>
+      <div class="explore-tags" aria-label="Gem categories">
+        <button class="explore-tag-btn is-all is-active" type="button" aria-pressed="true">All</button>
+        <button class="explore-tag-btn" type="button" aria-pressed="false">Cafe</button>
+        <button class="explore-tag-btn" type="button" aria-pressed="false">Nature Spot</button>
+        <button class="explore-tag-btn" type="button" aria-pressed="false">Art Space</button>
+        <button class="explore-tag-btn" type="button" aria-pressed="false">Thrift Shop</button>
+        <button class="explore-tag-btn" type="button" aria-pressed="false">Run Club</button>
+        <button class="explore-tag-btn" type="button" aria-pressed="false">Restaurants</button>
+        <button class="explore-tag-btn" type="button" aria-pressed="false">Historic Corner</button>
+        <button class="explore-tag-btn" type="button" aria-pressed="false">Music Gig</button>
+        <button class="explore-tag-btn" type="button" aria-pressed="false">Standup</button>
+      </div>
+    </section>
+
+    <section class="explore-results fade-section is-visible" aria-label="Explore results" id="exploreResultsSection">
+      <h2 id="exploreResultsTitle">Top Picks</h2>
+      <div class="explore-filter-chips" id="exploreFilterChips" aria-label="Result filters">
+        <button class="explore-filter-chip is-active" type="button" data-filter="all" aria-pressed="true">All Results</button>
+        <button class="explore-filter-chip" type="button" data-filter="trending" aria-pressed="false">Trending</button>
+        <button class="explore-filter-chip" type="button" data-filter="saved" aria-pressed="false">Saved &#10084;</button>
+        <button class="explore-filter-chip" type="button" data-filter="az" aria-pressed="false">A-Z</button>
+      </div>
+      <div class="explore-gem-grid" id="exploreGemGrid"></div>
+      <div class="explore-scroll-sentinel" id="exploreScrollSentinel" aria-hidden="true"></div>
+    </section>
+  </main>
+  <button class="explore-sticky-save" id="exploreStickySave" type="button" aria-label="View saved gems">
+    Saved &#10084; <span id="exploreSavedCount">0</span>
+  </button>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase.js" defer></script>
+  <script src="js/explore-data.js" defer></script>
+  <script src="js/admin.js" defer></script>
+  <script src="js/data-service.js" defer></script>
+  <script src="js/auth-guard.js" defer></script>
+  <script src="js/explore.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hidden Gem Scout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+  <main class="landing" id="landing">
+    <div class="scene" id="scene">
+      <div class="ambient ambient-a"></div>
+      <div class="ambient ambient-b"></div>
+      <header class="top-nav layer" data-depth="0.04">
+        <div class="brand">
+          <span class="brand-logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <defs>
+                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#34d399" />
+                  <stop offset="100%" stop-color="#fbbf24" />
+                </linearGradient>
+              </defs>
+              <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="url(#logoGradient)" stroke="#1e293b" stroke-width="1.5" stroke-linejoin="round"></path>
+              <circle cx="12" cy="12" r="2" fill="#fff"></circle>
+            </svg>
+          </span>
+          <span>Hidden Gem Scout</span>
+        </div>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="signin.html?next=explore.html">Explore</a>
+          <a href="#map-explorer">Map Explorer</a>
+          <a href="#trending">Trending</a>
+          <a href="ai-scout.html">Try AI Scout</a>
+        </nav>
+        <a class="btn btn-primary nav-login" href="signin.html">Sign In</a>
+      </header>
+
+      <div class="hero layer" data-depth="0.10" id="explore">
+        <h1>Hidden Gem Scout</h1>
+        <p class="subtext subtext-creative">Discover the Undiscovered, one hidden story at a time.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="signin.html?next=explore.html">Start Scouting</a>
+          <button class="btn btn-ghost">Watch Demo</button>
+        </div>
+      </div>
+
+
+      <section class="polaroid-section layer" data-depth="0.06" aria-label="Gem categories">
+        <h2>How It Works</h2>
+        <div class="polaroid-marquee">
+          <div class="polaroid-track" id="polaroidTrack"></div>
+        </div>
+      </section>
+
+      <section class="vibe-section layer" data-depth="0.05" aria-label="Select your vibe">
+        <div class="vibe-copy">
+          <h2>Select Your Vibe from Cards</h2>
+          <p class="vibe-lead">Not every trending place matches your energy.</p>
+          <p>Let's be real: not every hyped place feels right when you get there.</p>
+          <p>Pick your vibe cards, and we'll match you with spots that actually fit your mood, your people, and your plan.</p>
+          <p class="vibe-highlight">Your next favorite hidden gem is one vibe away.</p>
+          <div class="vibe-actions">
+          <a class="btn btn-primary vibe-btn" href="signin.html?next=explore.html">Explore</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-card-section layer" data-depth="0.04" aria-label="Map explorer" id="map-explorer">
+        <article class="map-card">
+          <div class="map-card-media" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=560&q=80" alt="" />
+          </div>
+          <div class="map-card-copy">
+            <h2>Map Explorer</h2>
+            <p>Swipe across a curated city map, discover hidden gems nearby, and jump straight to places that match your mood.</p>
+            <div class="map-card-actions">
+              <a class="btn btn-primary" href="map.html">Map Explorer</a>
+              <button class="btn btn-ghost map-explorer-open" type="button">Quick Map</button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="trend-card-section layer" data-depth="0.04" aria-label="Top rated and trending" id="trending">
+        <article class="trend-card" id="trendCard">
+          <div class="trend-card-media" id="trendTiles"></div>
+          <div class="trend-card-copy">
+            <h2>Trending Places in Pune</h2>
+            <p>See what is trending in Pune right now: popular cafes, best-rated restaurants, and hidden places people are loving this week.</p>
+            <a class="btn btn-primary" href="explore.html?trending=1">Trending</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="ai-card-section layer" data-depth="0.04" aria-label="AI Scout" id="ai-scout">
+        <article class="ai-card">
+          <div class="ai-card-head">
+            <span class="ai-symbol" aria-hidden="true">AI</span>
+            <h2>AI Scout</h2>
+          </div>
+          <p class="ai-card-text">Paste a social media link or describe a rumored spot you have heard, and we will find for you.</p>
+          <div class="ai-card-input-row">
+            <input class="ai-input" id="aiScoutInput" type="text" placeholder="Paste Instagram/Reel/YouTube link..." />
+          <button class="btn btn-primary" id="aiScoutBtn" type="button">Try AI Scout</button>
+          </div>
+          <p class="ai-feedback" id="aiFeedback" aria-live="polite"></p>
+        </article>
+      </section>
+
+      <section class="submit-card-section layer" data-depth="0.04" aria-label="Submit your gem" id="submit-gem" hidden>
+        <article class="submit-card">
+          <p class="submit-icon" aria-hidden="true">&#8599;</p>
+          <h2>Know a hidden gem?</h2>
+          <p class="submit-text">Share it with the community and let thousands of explorers discover what you have found.</p>
+          <button class="btn btn-primary submit-btn" id="submitGemBtn" type="button">Submit Your Gem</button>
+        </article>
+      </section>
+
+      <section class="why-section layer" data-depth="0.04" aria-label="Why Hidden Gem Scout">
+        <h2>Why Hidden Gem Scout</h2>
+        <div class="why-cards-grid">
+          <article class="why-card">
+            <h3>Real Local Finds</h3>
+            <p>Discover authentic local spots, not random overhyped picks.</p>
+          </article>
+          <article class="why-card">
+            <h3>Vibe-Based Matches</h3>
+            <p>Get place suggestions that fit your mood, your people, and your plan.</p>
+          </article>
+          <article class="why-card">
+            <h3>Curated Recommendations</h3>
+            <p>Skip trial and error with recommendations that actually work.</p>
+          </article>
+        </div>
+      </section>
+
+
+      <section class="faq-section layer" data-depth="0.03" aria-label="Frequently asked questions">
+        <h2>FAQs</h2>
+        <div class="faq-list">
+          <details>
+            <summary>How does AI Scout work?</summary>
+            <p>Paste a link or a place hint, and AI Scout maps clues to likely spots and nearby alternatives.</p>
+          </details>
+          <details>
+            <summary>Are places user-verified?</summary>
+            <p>Top cards are shaped by community ratings, repeat visits, and trending behavior.</p>
+          </details>
+          <details>
+            <summary>Can I submit my own gem?</summary>
+            <p>Yes. Use Submit Your Gem to add your place with details and photos.</p>
+          </details>
+          <details>
+            <summary>Is this Pune-only?</summary>
+            <p>Pune is our current focus. More cities are planned as the explorer base grows.</p>
+          </details>
+        </div>
+      </section>
+
+      <footer class="final-cta layer" data-depth="0.02" aria-label="Final call to action">
+        <h2>Ready to Discover Your Next Hidden Gem?</h2>
+        <p>Start exploring now or let AI Scout find your next perfect spot.</p>
+        <div class="final-cta-actions">
+          <a class="btn btn-primary" href="signin.html?next=explore.html">Start Exploring</a>
+          <button class="btn btn-ghost ai-scout-open" type="button">Try AI Scout</button>
+        </div>
+      </footer>
+
+      <footer class="site-footer" aria-label="Site footer">
+        <div class="site-footer-inner">
+          <div>
+            <h3>Hidden Gem Scout</h3>
+            <p>Discover Pune’s most loved hidden gems with vibe-first scouting.</p>
+          </div>
+          <nav class="site-footer-links" aria-label="Footer">
+            <a href="explore.html">Explore</a>
+            <a href="map.html">Map Explorer</a>
+            <a href="ai-scout.html">AI Scout</a>
+            <a href="explore.html?trending=1">Trending</a>
+            <a href="#legal">Legal</a>
+            <a href="mailto:rutvilandge@gmail.com">Contact</a>
+            <a href="https://github.com/rutvilandge" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </nav>
+          <div class="site-footer-meta">
+            <span id="legal">Legal</span>
+            <span>Contact: rutvilandge@gmail.com</span>
+            <span>GitHub: github.com/rutvilandge</span>
+            <span>© 2026 Rutvi Landge. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <a class="btn btn-primary" href="signin.html?next=explore.html">Start Exploring</a>
+    <button class="btn btn-ghost ai-scout-open" type="button">Try AI Scout</button>
+  </div>
+
+  <div class="map-explorer-modal" id="mapExplorerModal" aria-hidden="true">
+    <div class="map-explorer-modal-backdrop" data-map-close></div>
+    <div class="map-explorer-modal-card" role="dialog" aria-modal="true" aria-label="Map Explorer preview">
+      <button class="map-explorer-close" type="button" data-map-close aria-label="Close map explorer">&times;</button>
+      <div class="map-explorer-modal-head">
+        <div>
+          <p class="map-explorer-modal-eyebrow">Quick View</p>
+          <h2>Map Explorer</h2>
+          <p>Swipe the map and jump to real spots for your vibe.</p>
+        </div>
+        <a class="btn btn-primary" href="map.html">Open Full Map</a>
+      </div>
+      <div class="map-explorer-modal-body">
+        <div class="map-explorer-iframe-wrap">
+          <iframe title="Map preview for Pune" loading="lazy" src="https://maps.google.com/maps?q=Pune&output=embed"></iframe>
+        </div>
+        <div class="map-explorer-modal-list">
+          <article class="map-explorer-modal-item">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepLN_PXPpHoi2zHZZq9Hwbjg-dv1YJvJJMen82guBEPVvjgArGM15D8vrDhEwEi6Z9lJWmuFxg8B5oxFGYVX7EZVMqIAZXLDh5-kQVbfwqBcHL0lQdZYFlJHg-WJdKDoU1i2NPpSg=s1360-w1360-h1020-rw" alt="High Spirits Cafe" loading="lazy" />
+            <div>
+              <h3>High Spirits Cafe</h3>
+              <p>Live gigs and a lively cafe-bar atmosphere.</p>
+            </div>
+          </article>
+          <article class="map-explorer-modal-item">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqKdhvQrAabxFM_jUi6JKBgmo9WgQY0NwPy5dtKU1d1HwuCsdZAkAE457-Oy5dlMVGKHnlrsBikgs2L4ZoYhXAhVIBBQIJTAXn00U2B-ntfoICLx9bcZmuP8wS_yudk-tTLE6uf=s1360-w1360-h1020-rw" alt="Mazda Hall" loading="lazy" />
+            <div>
+              <h3>Mazda Hall</h3>
+              <p>Historic performance hall for concerts and shows.</p>
+            </div>
+          </article>
+          <article class="map-explorer-modal-item">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwernvXaygzf4b02sTrTEhqYRFdfbc9XwnBkli--je77Iti0gBiIE2Qc-jeVugzomfLyiPYCBfz_AWQsfoKbCum1OINzAC5jCIrAAwOW4pLpnUDBLCutkpiwwFQm-rxyfWjuWnOP0=s1360-w1360-h1020-rw" alt="antiSOCIAL Pune" loading="lazy" />
+            <div>
+              <h3>antiSOCIAL Pune</h3>
+              <p>Underground gigs and indie showcases.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase.js" defer></script>
+  <script src="js/explore-data.js" defer></script>
+  <script src="js/admin.js" defer></script>
+  <script src="js/data-service.js" defer></script>
+  <script src="js/trending.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
+
+
+

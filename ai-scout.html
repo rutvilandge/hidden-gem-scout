@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Scout | Hidden Gem Scout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body class="ai-scout-page">
+  <main class="ai-scout-wrap">
+    <header class="top-nav ai-scout-nav" aria-label="AI Scout navigation">
+      <div class="brand">
+        <span class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <defs>
+              <linearGradient id="logoGradientScout" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#34d399" />
+                <stop offset="100%" stop-color="#fbbf24" />
+              </linearGradient>
+            </defs>
+            <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="url(#logoGradientScout)" stroke="#1e293b" stroke-width="1.5" stroke-linejoin="round"></path>
+            <circle cx="12" cy="12" r="2" fill="#fff"></circle>
+          </svg>
+        </span>
+        <span>Hidden Gem Scout</span>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="signin.html?next=explore.html">Explore</a>
+        <a href="map.html">Map Explorer</a>
+      </nav>
+      <a class="btn btn-primary nav-login" href="signin.html">Sign In</a>
+    </header>
+
+    <section class="ai-scout-hero">
+      <div>
+        <p class="ai-scout-eyebrow">AI Scout Results</p>
+        <h1>Tell us the rumor. We'll find the place.</h1>
+        <p class="ai-scout-lead">Paste a social media link or describe the vibe. AI Scout will match clues to hidden gems nearby.</p>
+      </div>
+      <div class="ai-scout-input-card">
+        <label class="ai-scout-label" for="aiScoutSearch">Paste link or description</label>
+        <div class="ai-scout-input-row">
+          <input id="aiScoutSearch" class="ai-scout-input" type="text" placeholder="Instagram reel, YouTube link, or vibe description..." />
+          <button class="btn btn-primary" id="aiScoutSearchBtn" type="button">Scout It</button>
+        </div>
+        <p class="ai-scout-hint">Example: “live music, moody lighting, craft cocktails”</p>
+      </div>
+    </section>
+
+    <section class="ai-scout-results" aria-live="polite">
+      <div class="ai-scout-results-head">
+        <h2 id="aiScoutResultsTitle">Top Matches</h2>
+        <p id="aiScoutResultsMeta"></p>
+      </div>
+      <div class="ai-scout-results-grid" id="aiScoutResultsGrid"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase.js" defer></script>
+  <script src="js/explore-data.js" defer></script>
+  <script src="js/admin.js" defer></script>
+  <script src="js/data-service.js" defer></script>
+  <script src="js/ai-scout.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Map Explorer | Hidden Gem Scout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body class="map-page">
+  <main class="map-explorer-page">
+    <header class="top-nav map-top-nav" aria-label="Map explorer navigation">
+      <div class="brand">
+        <span class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <defs>
+              <linearGradient id="logoGradientMap" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#34d399" />
+                <stop offset="100%" stop-color="#fbbf24" />
+              </linearGradient>
+            </defs>
+            <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="url(#logoGradientMap)" stroke="#1e293b" stroke-width="1.5" stroke-linejoin="round"></path>
+            <circle cx="12" cy="12" r="2" fill="#fff"></circle>
+          </svg>
+        </span>
+        <span>Hidden Gem Scout</span>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="signin.html?next=explore.html">Explore</a>
+        <a href="index.html#ai-scout">Try AI Scout</a>
+      </nav>
+      <a class="btn btn-primary nav-login" href="signin.html">Sign In</a>
+    </header>
+
+    <section class="map-explorer-hero">
+      <div>
+        <p class="map-explorer-eyebrow">Live City View</p>
+        <h1>Map Explorer</h1>
+        <p class="map-explorer-lead">See hidden gems in Pune at a glance, then jump into the right vibe without scrolling forever.</p>
+        <div class="map-explorer-actions">
+          <a class="btn btn-primary" href="explore.html">Explore All Gems</a>
+          <a class="btn btn-ghost" href="index.html">Back to Landing</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-explorer-content">
+      <div class="map-explorer-grid">
+        <div class="map-explorer-map">
+          <iframe
+            id="mapExplorerFrame"
+            title="Map Explorer for Pune"
+            loading="lazy"
+            src="https://maps.google.com/maps?q=Pune&output=embed"
+          ></iframe>
+          <div class="map-explorer-map-footer">
+            <p>Pan around and zoom to preview neighborhoods.</p>
+            <a class="btn btn-ghost" id="mapExplorerOpen" href="https://www.google.com/maps/search/?api=1&query=Pune" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+          </div>
+        </div>
+        <aside class="map-explorer-panel">
+          <h2>Filter by Vibe</h2>
+          <div class="map-explorer-filters" id="mapExplorerFilters">
+            <button class="map-filter is-active" type="button" data-filter="All">All</button>
+            <button class="map-filter" type="button" data-filter="Cafe">Cafe</button>
+            <button class="map-filter" type="button" data-filter="Nature Spot">Nature Spot</button>
+            <button class="map-filter" type="button" data-filter="Art Space">Art Space</button>
+            <button class="map-filter" type="button" data-filter="Thrift Shop">Thrift Shop</button>
+            <button class="map-filter" type="button" data-filter="Run Club">Run Club</button>
+            <button class="map-filter" type="button" data-filter="Restaurants">Restaurants</button>
+            <button class="map-filter" type="button" data-filter="Historic Corner">Historic Corner</button>
+            <button class="map-filter" type="button" data-filter="Music Gig">Music Gig</button>
+            <button class="map-filter" type="button" data-filter="Standup">Standup</button>
+          </div>
+
+          <h3>Featured Spots</h3>
+          <div class="map-explorer-list" id="mapExplorerList"></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase.js" defer></script>
+  <script src="js/explore-data.js" defer></script>
+  <script src="js/admin.js" defer></script>
+  <script src="js/data-service.js" defer></script>
+  <script src="js/map.js" defer></script>
+</body>
+</html>

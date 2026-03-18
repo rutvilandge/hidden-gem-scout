@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In | Hidden Gem Scout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body class="auth-page">
+  <main class="auth-wrap">
+    <header class="top-nav auth-nav" aria-label="Sign in navigation">
+      <div class="brand">
+        <span class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img">
+            <defs>
+              <linearGradient id="logoGradientSignIn" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#34d399" />
+                <stop offset="100%" stop-color="#fbbf24" />
+              </linearGradient>
+            </defs>
+            <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="url(#logoGradientSignIn)" stroke="#1e293b" stroke-width="1.5" stroke-linejoin="round"></path>
+            <circle cx="12" cy="12" r="2" fill="#fff"></circle>
+          </svg>
+        </span>
+        <span>Hidden Gem Scout</span>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+      </nav>
+    </header>
+
+    <section class="auth-card">
+      <h1>Sign In</h1>
+      <p>Sign in to explore gems, use Map Explorer, AI Scout, and submit your hidden gem.</p>
+      <div class="auth-toggle" role="tablist" aria-label="Authentication mode">
+        <button class="auth-toggle-btn is-active" type="button" data-mode="signin">Sign In</button>
+        <button class="auth-toggle-btn" type="button" data-mode="signup">Create Account</button>
+      </div>
+      <form class="auth-form" id="loginForm">
+        <label for="loginName">Name</label>
+        <input id="loginName" type="text" placeholder="Your name" required />
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" placeholder="you@hidden-gem.com" required />
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" placeholder="********" required />
+        <button class="btn btn-primary" id="authSubmitBtn" type="submit">Sign In</button>
+        <p id="loginStatus" class="auth-status" aria-live="polite" style="margin-top: 1rem; font-size: 0.9rem;"></p>
+      </form>
+      <p class="auth-hint">New here? Choose Create Account to sign up.</p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase.js" defer></script>
+  <script src="js/data-service.js" defer></script>
+  <script src="js/login.js" defer></script>
+</body>
+</html>
