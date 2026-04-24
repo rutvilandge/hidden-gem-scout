@@ -1,6 +1,8 @@
 💎Hidden Gem Scout:
 It is a modern discovery platform dedicated to uncovering off-the-beaten-path locations and authentic local experiences.
 By combining community-driven data with AI-powered recommendations, it provides a unique way to explore destinations beyond the typical tourist guides.
+live link-https://hidden-gem-scout.vercel.app/
+
 
 ✨ Features
 
@@ -17,7 +19,7 @@ LayerTechnologiesFrontendVanilla JS (ES6+), Tailwind CSS, Lucide IconsMapsLeafle
 
 🚀 Getting Started
 1. Clone & install:
-bashgit clone https://github.com/your-username/hidden-gem-scout.git
+bashgit clone https://github.com/rutvilandge/hidden-gem-scout.git
 cd hidden-gem-scout
 npm install
 2. Set up .env:
